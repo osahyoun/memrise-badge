@@ -4,7 +4,7 @@ Sunrize.jQuery = window.jQuery.noConflict();
 
 (function($){
   var loadingStyleSheet = false;
-  var styleSheetURL = 'http://www.sunrize.me/badge/sunrize.css';
+  var styleSheetURL = 'http://www.sunrize.me/badge.css';
   var resourceURL = 'http://www.sunrize.me/user/' + Sunrize.user + '?callback=?';
   
   function getOrdinal(number){
