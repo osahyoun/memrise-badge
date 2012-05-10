@@ -3,7 +3,6 @@ if(typeof Sunrize === 'undefined') Sunrize = {}
 ;(function(){
   var loadingStyleSheet = false
       styleSheetURL = 'http://www.sunrize.me/badge.css'
-      styleSheetURL = '/assets/application.css'
       resourceURL = 'http://www.sunrize.me/user/' + Sunrize.user + '?callback=?'
       jsonpID = 0
       d = document
@@ -44,14 +43,14 @@ if(typeof Sunrize === 'undefined') Sunrize = {}
   }
   
   function loadStyles(){
-    var styleTag, repeat
+    var s, repeat
     if(!loadingStyleSheet){
       loadingStyleSheet = true
-      styleTag = d.createElement("link")
-      styleTag.href = styleSheetURL
-      styleTag.rel = "stylesheet"
-      styleTag.type = "text/css"
-      d.getElementsByTagName("head")[0].appendChild(styleTag)
+      s = d.createElement("link")
+      s.href = styleSheetURL
+      s.rel = "stylesheet"
+      s.type = "text/css"
+      d.getElementsByTagName("head")[0].appendChild(s)
       repeat = setInterval(function() {
         if (getBadgePosition() == "relative") {
           clearInterval(repeat)
