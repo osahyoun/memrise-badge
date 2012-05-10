@@ -4,6 +4,21 @@
    padding: 0;
    text-decoration: none;
   }
+}
+
+
+#sunrize-badge {
+  position: relative;
+  margin: 0;
+  background: white;
+  width: 180px;
+  border: 1px solid #ddd;
+  padding: 2px;
+  border-radius: 4px;
+  color: #333;
+  position: relative;
+  font-family: 'lucida grande';
+  font-size: 13px;
 
   strong {
    font-weight: bold;
@@ -15,22 +30,12 @@
    text-decoration: none;
    color: #43a2eb;
   }
-  color: #333;
-  position: relative;
-  font-family: 'lucida grande';
-
-  font-size: 13px;
   dl {
     margin: 0;
     padding: 0;
   }
-  margin: 0;
-  background: white;
-  width: 180px;
-  border: 1px solid #ddd;
-  padding: 2px;
-  border-radius: 4px;
-
+}
+#sunrize-badge {
   #sunrize-interior {
    .sunrize-header, .sunrize-courses {
       background: #b5e1f9;
