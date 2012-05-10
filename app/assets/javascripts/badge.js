@@ -6,6 +6,7 @@ Sunrize.jQuery = window.jQuery.noConflict();
   var loadingStyleSheet = false;
   var styleSheetURL = 'http://www.sunrize.me/badge.css';
   var resourceURL = 'http://www.sunrize.me/user/' + Sunrize.user + '?callback=?';
+  var jsonpID = 0;
   
   function getOrdinal(number){
     var last = number.charAt(number.length - 1);
@@ -78,9 +79,23 @@ Sunrize.jQuery = window.jQuery.noConflict();
   }
   
   function getData(){
-    $.getJSON(resourceURL, function(data){
+    JSONP(resourceURL, function(data){
       insertHTML(data);
     });
+  }
+  
+  function JSONP(url, callback){
+    var script = document.createElement('script'),
+        callbackName = 'JSONP' + (++jsonpID)
+    
+    script.src = url.replace(/=\?/, '=' + callbackName)
+    document.getElementsByTagName('head')[0].appendChild(script)
+    window[callbackName] = function(data){
+      delete window[callbackName]
+      script.parentElement.removeChild(script);
+      if(typeof callback !== 'undefined') return callback(data)
+      else return data
+    }
   }
   
 })(Sunrize.jQuery);
