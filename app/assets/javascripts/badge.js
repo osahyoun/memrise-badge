@@ -1,11 +1,11 @@
 if(typeof Sunrize === 'undefined') Sunrize = {}
 
 ;(function(){
-  var loadingStyleSheet = false
-      styleSheetURL = 'http://www.sunrize.me/badge.css'
-      resourceURL = 'http://www.sunrize.me/user/' + Sunrize.user + '?callback=?'
-      jsonpID = 0
-      d = document
+  var loadingStyleSheet = false,
+      styleSheetURL = 'http://www.sunrize.me/badge.css',
+      resourceURL = 'http://www.sunrize.me/user/' + Sunrize.user + '?callback=?',
+      jsonpID = 0,
+      d = document;
   
   function getOrdinal(number){
     var last = number.charAt(number.length - 1)
