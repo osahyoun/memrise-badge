@@ -86,7 +86,7 @@ Sunrize.jQuery = window.jQuery.noConflict();
   
   function JSONP(url, callback){
     var script = document.createElement('script'),
-        callbackName = 'JSONP' + (++jsonpID)
+        callbackName = 'sunrize_JSONP' + (++jsonpID)
     
     script.src = url.replace(/=\?/, '=' + callbackName)
     document.getElementsByTagName('head')[0].appendChild(script)
